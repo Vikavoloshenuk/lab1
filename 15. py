@@ -1,0 +1,22 @@
+def triangular_number(n):
+    """Обчислює n-те трикутне число."""
+    return n * (n + 1) // 2
+
+def sum_of_triangular_points(n):
+    """Обчислює суму точок у трикутниках від 1 до n."""
+    sum_points = 0
+    for i in range(1, n + 1):
+        sum_points += triangular_number(i)
+    return sum_points
+
+# Приклад використання
+sides = [10, 100, 1000]
+for side in sides:
+    result = sum_of_triangular_points(side)
+    print(f"Сума точок у трикутниках зі сторонами від 1 до {side}: {result}")
+
+# Перевірка результатів
+print("Перевірка точок для кількох значень сторони:")
+for i in range(1, 11):
+    print(f"Сторона {i}: {triangular_number(i)} точки")
+    
